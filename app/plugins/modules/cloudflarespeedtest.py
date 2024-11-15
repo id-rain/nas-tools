@@ -390,7 +390,7 @@ class CloudflareSpeedTest(_IPluginModule):
                 self.error(f"获取CloudflareSpeedTest版本失败，获取上次运行版本{self._version}，开始安装")
                 install_flag = True
             else:
-                release_version = "v2.2.2"
+                release_version = "v2.2.5"
                 self._version = release_version
                 self.error(f"获取CloudflareSpeedTest版本失败，获取默认版本{release_version}，开始安装")
                 install_flag = True
@@ -445,7 +445,7 @@ class CloudflareSpeedTest(_IPluginModule):
                 os.system(
                     f'wget -P {self._cf_path} --no-check-certificate -e use_proxy=yes -e https_proxy={https_proxy} {download_url}')
             else:
-                os.system(f'wget -P {self._cf_path} https://ghproxy.com/{download_url}')
+                os.system(f'wget -P {self._cf_path} https://gh-proxy.com/{download_url}')
 
         # 判断是否下载好安装包
         if Path(f'{self._cf_path}/{cf_file_name}').exists():
